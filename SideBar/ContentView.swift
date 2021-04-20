@@ -20,21 +20,22 @@ struct ContentView: View {
         VStack {
             HStack {
                 if !hideButton {
+                    Spacer()
                     Button(action: {
                         toggleBackground()
                     }) {
                         if preferredColorScheme == .light {
                             Image(systemName: "moon.fill")
                                 .font(.title2)
+                                .foregroundColor(.black).opacity(0.8)
                         }
                         else {
                             Image(systemName: "sun.max.fill")
-                                .font(.title2)
-                                .colorInvert()
+                                .font(.title)
+                                .foregroundColor(.white).opacity(0.8)
+                               // .padding(5)
                         }
                     }
-
-                    Spacer()
                 }
             }
             .padding()
